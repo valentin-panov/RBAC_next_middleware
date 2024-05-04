@@ -24,7 +24,7 @@ const routes = [
   {
     label: "Login Page",
     path: "login",
-    allowedRoles: ["", "customer", "admin"],
+    allowedRoles: [""],
   },
 ];
 
@@ -81,6 +81,7 @@ export default async function middleware(request: NextRequest) {
     }
   }
 
+  // role-based protected routes
   const role = profile?.role || "";
   const currentPath = routes.find((route) => route.path === path[1]);
   const allowed = currentPath?.allowedRoles.includes(role);
