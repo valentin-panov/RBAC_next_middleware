@@ -12,6 +12,11 @@ export const config = {
 
 const routes = [
   {
+    label: "Home Page",
+    path: "",
+    allowedRoles: ["customer", "admin"],
+  },
+  {
     label: "Admin Space",
     path: "admin",
     allowedRoles: ["admin"],
